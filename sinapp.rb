@@ -3,7 +3,7 @@ require 'sinatra'
 require 'haml'
 
 get '/' do
-      '<div>This is ktest.heroku.com</div>'
+      haml :index
 end
 
 get '/:app' do
