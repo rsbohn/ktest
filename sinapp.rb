@@ -6,12 +6,29 @@ get '/' do
       haml :index
 end
 
-get '/:app' do
-      "<div>Running bare #{params[:app]}</div>"
-end
-
-get '/:app/*' do 
-      "<div>You want to run #{params[:app]}. Soon you will!</div>"
+get %r{/(a\d+x\d+)*} do |app|
+<<EOF
+<html>
+<head>
+<title>ktest.heroku.com #{app}</title>
+<script type="text/javascript">
+      var KOBJ_config ={
+            "rids": ["#{app}"],
+            "#{app}:kynetx_app_version": "dev"
+      };
+</script>
+<script type="text/javascript" src="http://init.kobj.net/js/shared/kobj-static.js">
+</script>
+</head>
+<body>
+ <div id="header"></div>
+ <div id="content">
+  <div>Running #{app}</div>
+ </div>
+ <div id="footer">ktest.heroku.com from Rando Media LLC</div>
+</body>
+</html>
+EOF
 end
 
 get '/help' do
