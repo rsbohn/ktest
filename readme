@@ -1,1 +1,19 @@
 This is a testbed for Kynetx scripts. It provides an on-demand testbed for any Kynetx ruleset.
+
+To use it: 
+-First figure out your ruleset ID, for example a421x47.
+-Add a rule that will fire for your rulset
+      select when pageview "ktest.heroku.com/a421x47"
+-Next open http://ktest.heroku.com/a421x47
+-When the page loads your ruleset is automatically included in the page
+(using site tags)
+-Your rule fires, doing whatever is should do.
+
+Why not just use a bookmarklet?
+With a bookmarklet you wind up refreshing the page, then running the
+bookmarklet. Why not just press 'F5'?
+
+Why not use Waahui?
+You should use Waahui (www.waahui.com) - it is a great place to build
+a UI for your Kynetx applications. ktest.heroku.com is more about testing
+and trying stuff out.
