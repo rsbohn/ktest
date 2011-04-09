@@ -3,5 +3,51 @@
   %title ktest.heroku.com
  %body
   #header
-  #content ktest.heroku.com
-  #footer Provided by Rando Media LLC
+   %h2 ktest.heroku.com: A testbed for Kynetx applications.
+  #content 
+   This site provides on-demand testing for any Kynetx ruleset. To use it do the following:
+   %ul
+    %li Figure out your ruleset ID, for example a421x47
+    %li 
+     Add a rule that will fire for your ruleset:
+     %code select when pageview ".*"
+     should work.
+    %li Include your ruleset ID in the URL http://ktest.heroku.com/a421x47
+    %li When the page loads your ruleset is automatically included
+    %li Your rule fires, doing whatever it does
+
+  #faq
+   %h2 FAQ
+   %strong Why not just use a bookmarklet?
+   %p With a bookmarklet you usually refresh the page, then click to run the bookmarklet. With ktest.heroku.com you only need to refresh the page. It also allows you to switch browsers without the need to re-install the bookmarklet. Just copy the URL to the new browser and you're good.
+
+   %strong Why not use WAAHUI!!!?
+   %p 
+    You should use Waahui--it's a great place to build a home 
+    for your Kynetx applications. ktest.heroku.com is more 
+    about testing and trying stuff out.
+    Waahui gives your application a better URL.
+
+   %strong Do I need to add ktest.heroku.com to my dispatch block?
+   %p
+    If you don't have any domains specified in your displatch block
+    your rules should fire just fine. If you have specified domains 
+    you will have to add ktest.heroku.com.
+   
+   #examples
+    %h2 Examples
+    %a{:href=>"/a421x47"} a421x47
+    is a module for the SauceLabs API.
+
+   #links
+    %h2 See also:
+    %a{:href=>"kynetx.com"} Kynetx.com
+    Build browser applications.
+    %br
+    %a{:href=>"appbuilder.kynetx.com"} Kynetx Appbuilder
+    Go here to create your applications.
+    %br
+    %a{:href=>"http://www.waahui.com"} WAAHUI!!!
+    Create a UI for your Kynetx applications.
+  #footer 
+   %p ktest.heroku.com - Copyright &copy; Rando Media LLC 2011 - tweet your comments to @rsbohn

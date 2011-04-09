@@ -6,6 +6,10 @@ get '/' do
       haml :index
 end
 
+get '/help' do
+      '<div>Some help would be nice.</div>'
+end
+
 get %r{/(a\d+x\d+)*} do |app|
 <<EOF
 <html>
@@ -31,7 +35,4 @@ get %r{/(a\d+x\d+)*} do |app|
 EOF
 end
 
-get '/help' do
-      '<div>Some help would be nice.</div>'
-end
 
