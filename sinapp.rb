@@ -7,7 +7,7 @@ get '/' do
 end
 
 get '/help' do
-      '<div>Some help would be nice.</div>'
+      haml :help
 end
 
 get %r{/(a\d+x\d+)*} do |app|
@@ -25,11 +25,14 @@ get %r{/(a\d+x\d+)*} do |app|
 </script>
 </head>
 <body>
+ <div id="container">
  <div id="header"></div>
  <div id="content">
   <div>Running #{app}</div>
+  <div id="main"></div>
  </div>
  <div id="footer">ktest.heroku.com from Rando Media LLC</div>
+ </div>
 </body>
 </html>
 EOF
