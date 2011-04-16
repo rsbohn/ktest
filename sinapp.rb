@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'haml'
+require 'rest_client'
 
 get '/' do
       haml :index
@@ -10,7 +11,10 @@ get '/help' do
       haml :help
 end
 
-get %r{/(a\d+x\d+)*} do |app|
+# should send app to webhook at kynetx
+# prob use rest_client for that!
+get %r{/(a\d+x\d+)/?.*} do |app|
+      RestClient.get "http://webhooks.kynetxapps.net/h/a421x53/ktest?ruleset=#{app}"
 <<EOF
 <html>
 <head>
