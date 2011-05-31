@@ -22,7 +22,8 @@ get %r{/(a\d+x\d+)/?.*} do |app|
 <script type="text/javascript">
       var KOBJ_config ={
             "rids": ["#{app}"],
-            "#{app}:kynetx_app_version": "dev"
+            "#{app}:kynetx_app_version": "dev",
+            "ktest_site_tags": "true"
       };
 </script>
 <script type="text/javascript" src="http://init.kobj.net/js/shared/kobj-static.js">
