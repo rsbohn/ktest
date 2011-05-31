@@ -11,6 +11,38 @@ get '/help' do
       haml :help
 end
 
+get %r{/x77(/.*|$)} do
+a="1"
+<<EOF
+<html>
+<head>
+<title>Test a421x77</title>
+<script type="text/javascript">
+      var KOBJ_config ={
+            "rids":["a421x77"],
+            "a421x77:kynetx_app_version":"dev",
+            "a421x77:site_tag":"true",
+            "a421x77:uno":"1",
+            "moon": "first quarter" 
+      };
+      var kvars = {
+            "cheese": "Camembert",
+            "bread": "Wheat",
+            "drink": "Fanta" 
+      };
+</script>
+<script type="text/javascript" src="http://init.kobj.net/js/shared/kobj-static.js"> 
+</script>
+</head>
+<body>
+<div id='header'></div>
+<div id='main'></div>
+<div id='footer'>Rando Media LLC 2011</div>
+</body>
+</html>
+EOF
+end
+
 # should send app to webhook at kynetx
 # prob use rest_client for that!
 get %r{/(a\d+x\d+)/?.*} do |app|
@@ -23,7 +55,7 @@ get %r{/(a\d+x\d+)/?.*} do |app|
       var KOBJ_config ={
             "rids": ["#{app}"],
             "#{app}:kynetx_app_version": "dev",
-            "ktest_site_tags": "true"
+            "#{app}:site_tag": "true"
       };
 </script>
 <script type="text/javascript" src="http://init.kobj.net/js/shared/kobj-static.js">
