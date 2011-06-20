@@ -57,9 +57,7 @@ get %r{/(a\d+x\d+)/?.*} do |app|
       var d = document;
       var s = d.createElement("script");
       s.text='KOBJ_configs=typeof(KOBJ_CONFIGS)=="undefined"?[]:KOBJ_configs;'+
-      'KOBJ_configs.push({ "rids": ["#{app}"]});'+
-      'KOBJ_configs.push({"#{app}:kynetx_app_version": "dev"});'+
-      'KOBJ_configs.push({"#{app}:site_tag": "true" });';
+      'KOBJ_configs.push({ "rids": ["#{app}"],"#{app}:kynetx_app_version": "dev","#{app}:site_tag": "true" });';
       d.body.appendChild(s);
       var l = d.createElement('script');
       l.src='http://init.kobj.net/js/shared/kobj-static.js';
