@@ -46,7 +46,7 @@ end
 # should send app to webhook at kynetx
 # prob use rest_client for that!
 get %r{/(a\d+x\d+)/?.*} do |app|
-      RestClient.get "http://webhooks.kynetxapps.net/h/a421x53/ktest?ruleset=#{app}"
+      #RestClient.get "http://webhooks.kynetxapps.net/h/a421x53/ktest?ruleset=#{app}"
 <<EOF
 <html>
 <head>
