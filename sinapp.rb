@@ -11,6 +11,12 @@ get '/help' do
       haml :help
 end
 
+get '/json/null' do
+      status 200
+      headers "Content-Type" => "application/json"
+      body "{}"
+end
+
 get %r{/x77(/.*|$)} do
 a="1"
 <<EOF
