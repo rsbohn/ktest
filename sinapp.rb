@@ -17,6 +17,10 @@ get '/json/null' do
       body "{}"
 end
 
+get %r{/meh(/.*|$)} do
+      haml :horsty
+end
+
 get %r{/x77(/.*|$)} do
 a="1"
 <<EOF
